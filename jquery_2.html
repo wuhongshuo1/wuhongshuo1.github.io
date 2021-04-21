@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery-3.6.0.min.js">
+</script>
+<script> 
+$(document).ready(function(){
+  $(".a").click(function(){
+	  $("div").animate({left:'+=250px'});
+});
+	$(".b").click(function(){
+		$("div").animate({left:'-=250px'});
+	})
+});
+</script> 
+</head>
+ 
+<body>
+<button class="a">向右</button>
+<button class="b">向左</button>
+<p>点击按钮使方块左右移动。</p>
+<div style="background:#98bf21;height:100px;width:100px;position:absolute;">
+</div>
+
+</body>
+</html>

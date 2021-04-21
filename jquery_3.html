@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+$("#div1").hide()});
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#div1").fadeToggle();
+  });
+});
+</script>
+</head>
+
+<body>
+
+<button>点击这里，显示隐藏的矩形</button>
+<br><br>
+<div id="div1" style="width:80px;height:80px;background-color:red;"></div>
+</body>
+
+</html>
