@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery-3.6.0.min.js">
+</script>
+<script>
+$(document).ready(function(){
+	 $(".a").hide();
+	 $(".b").hide();
+  $("p").click(function(){
+    $(this).hide();
+	  $(".a").show();
+	  $(".b").show();
+  });
+});
+</script>
+</head>
+<body>
+<p>点击我</p>
+<p class="a">点击我，我会消失。</p>
+<p class="b">也要点击我哦。</p>
+</body>
+</html>
