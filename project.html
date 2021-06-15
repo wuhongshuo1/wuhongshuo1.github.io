@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Project</title>
+</head>
+
+<body>
+	<script src="D:\Javascript\chart.min.js"> //引入Chart.js
+	Chart.defaults.global.responsive = true; //默认开启图表响应
+	</script>
+	<script src="D:\Javascript\jquery-3.6.0.min.js"> //引入jquery.js
+	</script>
+	
+		
+	<script>
+	function loadXMLDoc(dname)
+{
+    if (window.XMLHttpRequest)
+    {
+        xhttp=new XMLHttpRequest();
+    }
+    else
+    {
+        xhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xhttp.open("GET",dname,false);
+    xhttp.send();
+    return xhttp.responseXML;
+}
+	</script>
+	<canvas id="myChart" width="400" height="400"></canvas> <!--声明图表大小-->
+	
+	<script>
+		
+		xmlDoc=loadXMLDoc("dataBase.xml");
+		var x=xmlDoc.getElementsByTagName("Name")[0].childNodes[1].nodeValue;
+		function test(){
+			document.write(x);
+		};
+	var news ={newsID:0,newsName:"",newsDate:"",newsTime:"",newsHot:"",newsRank:0};
+	var chartData = { //定义图表数据
+    type: 'bar',
+    data: {
+        labels: ["dD 1", "dD 2", "dD 3", "dD 4", "dD 5", "dD 6", "dD 7", "dD 8", "dD 9", "dD 10"],
+        datasets: [{
+            data: [],
+			fillColor: "rgba(0,60,100,1)",
+			backgroundColor:"rgba(0,60,100,1)",
+            borderWidth: 1,
+        }],
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        } 
+    }
+	};
+	var ctx = document.getElementById("myChart");
+	var myChart = new Chart(ctx,chartData,{responsive:true});
+	var index =11;
+	function addData(chart, label, data) {
+    	chart.data.labels.push(label);
+    	chart.data.datasets.forEach((dataset) => {
+        	dataset.data.push(data);
+    	});
+		index++;
+    	chart.update();
+	};
+
+	function removeData(chart) {
+		chart.data.labels.pop();
+    	chart.data.datasets.forEach((dataset) => {
+        	dataset.data.pop();
+    	});
+    	chart.update();
+	};
+	var arr=new Array();
+	function setup()
+		{
+			for (var i=0;i<2;i++)
+				{
+					arr[i]=new news()
+				}
+		};
+	function load()
+		{
+		if(chartData.data.length!=0)
+			removeData(myChart);
+		
+	};
+	</script>
+	<button onClick="test()">点击</button>
+</body>
+</html>
