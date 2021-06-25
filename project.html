@@ -32,7 +32,7 @@
 	<canvas id="myChart" width="400" height="400"></canvas> <!--声明图表大小-->
 	
 	<script>
-		async:false;
+		async:ture;
 		xmlDoc=loadXMLDoc("dataBase.xml");
 		var x=xmlDoc.getElementsByTagName("Name")[0].childNodes[0].nodeValue;
 		function test(){
