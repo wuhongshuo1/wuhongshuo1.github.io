@@ -33,10 +33,10 @@
 	
 	<script>
 		xmlDoc=loadXMLDoc("dataBase.xml");
-		var x=xmlDoc.getElementsByTagName("news")[0];
-		var y=x.childNodes[0];
 		function test(){
-			document.write(y);
+			var x=xmlDoc.getElementsByTagName("news")[0];
+			var y=x.childNodes[0];
+			y=this.responsivText;
 		};
 	var news ={newsID:0,newsName:"",newsDate:"",newsTime:"",newsHot:"",newsRank:0};
 	var chartData = { //定义图表数据
