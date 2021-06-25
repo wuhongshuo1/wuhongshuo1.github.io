@@ -24,7 +24,7 @@
     {
         xhttp=new ActiveXObject("Microsoft.XMLHTTP");
     }
-    xhttp.open("GET",dname,true);
+    xhttp.open("GET",dname,false);
     xhttp.send();
     return xhttp.responseXML;
 }
@@ -33,9 +33,10 @@
 	
 	<script>
 		xmlDoc=loadXMLDoc("dataBase.xml");
-		var x=xmlDoc.getElementsByTagName("Date")[1].childNodes[1].nodeValue;
+		var x=xmlDoc.getElementsByTagName("Date")[0];
+		var y=x.childNodes[0];
 		function test(){
-			document.write(x);
+			document.write(y);
 		};
 	var news ={newsID:0,newsName:"",newsDate:"",newsTime:"",newsHot:"",newsRank:0};
 	var chartData = { //定义图表数据
