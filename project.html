@@ -37,8 +37,8 @@
 			var x=xmlDoc.getElementsByTagName("news")[0];
 			var y=x.childNodes[0];
 			y=this.responseText;
-			xttp.open("GET","dataBase.xml",false);
-			xttp.send();
+			xhttp.open("GET","dataBase.xml",false);
+			xhttp.send();
 		};
 	var news ={newsID:0,newsName:"",newsDate:"",newsTime:"",newsHot:"",newsRank:0};
 	var chartData = { //定义图表数据
