@@ -116,7 +116,7 @@
 					var a=xmlDoc.getElementsByTagName("NewsDate")[date].getElementsByTagName("Name")[i];
 					for (var j=1;j<24;j++)
 					{
-						if (a.getElementsByTagName("Hour")[j].childNode[0].nodeValue==hour)
+						if (a.getElementsByTagName("Hour")[j].childNodes[0].nodeValue==hour)
 						{
 							addData(myChart,0,a.childNodes[0].nodeValue,
 								a.getElementsByTagName("Hot")[j].childNodes[0].nodeValue);
