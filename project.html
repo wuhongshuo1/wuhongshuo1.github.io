@@ -49,6 +49,7 @@
 			backgroundColor:"rgba(0,60,100,1)",
             borderWidth: 1,
             order: 1,
+            yAxisID: 'y',
         },
         {
         	label: "Dataset2",
@@ -58,11 +59,22 @@
             borderWidth: 1,
             type: 'line',
             order: 0,
+            yAxisID: 'y1',
         }
         ],
     },
     options: {
         scales: {
+        	y: {
+        		type: 'bar',
+        		display: true,
+        		position: 'left',
+        	}
+        	y1: {
+        		type:'line',
+        		display: true,
+        		position: 'left',
+        	}
             yAxes: [{
                 ticks: {
                     beginAtZero:true
