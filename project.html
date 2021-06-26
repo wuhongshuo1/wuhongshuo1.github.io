@@ -111,7 +111,7 @@
 	};
 	function setup(date,hour)
 		{
-			while (myChart.data.length)
+			while (myChart.data.datasets[0].data.length)
 			{
 				removeData(myChart);
 			}
