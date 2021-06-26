@@ -96,8 +96,10 @@
 		{
 			for (var i=0;i<7;i++)
 				{
-					addData(myChart,0,i,xmlDoc.getElementsByTagName("Hot")[i].childNodes[0].nodeValue);
-					addData(myChart,1,i,xmlDoc.getElementsByTagName("Rank")[i].childNodes[0].nodeValue);
+					addData(myChart,0,xmlDoc.getElementsByTagName("Name")[i].childNodes[0].nodeValue,
+						xmlDoc.getElementsByTagName("Hot")[i].childNodes[0].nodeValue);
+					addData(myChart,1,xmlDoc.getElementsByTagName("Name")[i].childNodes[0].nodeValue,
+						xmlDoc.getElementsByTagName("Rank")[i].childNodes[0].nodeValue);
 				}
 		};
 	function load()
