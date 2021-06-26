@@ -139,7 +139,7 @@
 	</script>
 	<button id=setupButton onClick="setup(0,19)">setup</button>
 	<button onClick="removeData(myChart)">删除</button>
-	<select id="HourList">
+	<select id="HourList" onChange="changeSetup(this.value)">
 	</select>
 	<script>
 		function changeSetup(i)
@@ -149,8 +149,8 @@
 		for (i=0;i<24;i++)
 		{
 			var option=document.createElement("option");
+			option.value=i;
 			option.text=(i+'点');
-			option.onsubmit="setup(0,i)";
 			document.getElementById('HourList').add(option,null);
 		}
 	</script>
