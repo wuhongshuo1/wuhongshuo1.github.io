@@ -49,7 +49,6 @@
 			backgroundColor:"rgba(0,60,100,1)",
             borderWidth: 1,
             order: 1,
-            yAxisID: 'y',
         },
         {
         	label: "Dataset2",
@@ -65,10 +64,6 @@
     },
     options: {
         scales: {
-        	y: {
-        		display: true,
-        		position: 'left',
-        	},
         	y1: {
         		type:'linear',
         		display: true,
@@ -107,10 +102,11 @@
 		{
 			for (var i=0;i<7;i++)
 				{
-					addData(myChart,0,xmlDoc.getElementsByTagName("Name")[i].childNodes[0].nodeValue,
-						xmlDoc.getElementsByTagName("Hot")[i].childNodes[0].nodeValue);
-					addData(myChart,1,xmlDoc.getElementsByTagName("Name")[i].childNodes[0].nodeValue,
-						xmlDoc.getElementsByTagName("Rank")[i].childNodes[0].nodeValue);
+					var a=xmlDoc.getElementsByTagName("Name")[i];
+					addData(myChart,0,xmlDoc.a.childNodes[0].nodeValue,
+						a.getElementsByTagName("Hot")[0].childNodes[0].nodeValue);
+					addData(myChart,1,a.childNodes[0].nodeValue,
+						a.getElementsByTagName("Rank")[0].childNodes[0].nodeValue);
 				}
 		};
 	function load()
