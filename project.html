@@ -37,7 +37,7 @@
 		function test(){
 			var x=xmlDoc.getElementsByTagName("news")[0];
 			var y=x.childNodes[0];
-			document.getElementById("element").innerHTML=y;
+			document.getElementById("element").innerHTML=xmlDoc.getElementsByTagName("news")[0].childNodes[0].nodeValue;
 			xhttp.open("GET","dataBase.xml",false);
 			xhttp.send();
 		};
