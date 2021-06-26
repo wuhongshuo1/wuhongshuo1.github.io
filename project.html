@@ -81,6 +81,12 @@
                 }
             }]
         } 
+        plugins: {
+        	title: {
+        		display: true,
+        		text: '首页',
+        	}
+        }
     }
 	};
 	var ctx = document.getElementById("myChart");
@@ -103,16 +109,22 @@
     	});
     	chart.update();
 	};
-	var arr=new Array();
-	function setup()
+	function setup(date,hour)
 		{
 			for (var i=0;i<7;i++)
 				{
-					var a=xmlDoc.getElementsByTagName("Name")[i];
-					addData(myChart,0,a.childNodes[0].nodeValue,
-						a.getElementsByTagName("Hot")[0].childNodes[0].nodeValue);
-					addData(myChart,1,a.childNodes[0].nodeValue,
-						a.getElementsByTagName("Rank")[0].childNodes[0].nodeValue);
+					var a=xmlDoc.getElementById(date).getElementsByTagName("Name")[i];
+					for (var j=0;j<24;j++)
+					{
+						if (a.getElementsByTagName("Hour")[j].nodeValue==hour)
+						{
+							addData(myChart,0,a.childNodes[0].nodeValue,
+								a.getElementsByTagName("Hot")[j].childNodes[0].nodeValue);
+							addData(myChart,1,a.childNodes[0].nodeValue,
+								a.getElementsByTagName("Rank")[j].childNodes[0].nodeValue);
+							myChart.options.plugins.title.text=(date+'的'+Hour+'点的热搜排行');
+						}
+					}
 				}
 		};
 	function load()
@@ -120,6 +132,7 @@
 
 	}
 	</script>
-	<button onClick="setup()">点击</button>
+	<button onClick="setup()">setup</button>
+	<button onClick="removeData(myChart)">删除</button>
 </body>
 </html>
