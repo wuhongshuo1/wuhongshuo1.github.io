@@ -136,21 +136,12 @@
 
 	}
 	</script>
-	<button id=setupButton onClick="setup(0,changeSetup())">setup</button>
+	<button id=setupButton onClick="setup(0,document.getElementById('HourList').selectedIndex)">setup</button>
 	<button onClick="removeData(myChart)">删除</button>
-	<select id="HourList" onChange="changeSetup(this.value)">
+	<select id="HourList">
 	</select>
 	<script>
-		function changeSetup()
-		{
-			for (i=0;i<24;i++)
-			{
-				if (document.getElementsByTagName(('h'+i)).selected=true)
-				{
-					return i;
-				}
-			}
-		}
+		
 		for (i=0;i<24;i++)
 		{
 			var option=document.createElement("option");
