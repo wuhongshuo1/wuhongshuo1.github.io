@@ -49,6 +49,7 @@
 			backgroundColor:"rgba(0,60,100,1)",
             borderWidth: 1,
             order: 1,
+            yAxisID:'y',
         },
         {
         	label: "Dataset2",
@@ -64,6 +65,10 @@
     },
     options: {
         scales: {
+        	y:{
+        		display: true,
+        		position: 'left',
+        	},
         	y1: {
         		type:'linear',
         		display: true,
