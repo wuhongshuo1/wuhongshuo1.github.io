@@ -113,15 +113,15 @@
 		{
 			for (var i=0;i<7;i++)
 				{
-					var a=xmlDoc.getElementById("5/1")[0].getElementsByTagName("Name");
+					var a=xmlDoc.getElementsByTagName("NewsDate")[date].getElementsByTagName("Name")[i];
 					for (var j=0;j<24;j++)
 					{
-						if (a[i].getElementsByTagName("Hour")[j].nodeValue==hour)
+						if (a.getElementsByTagName("Hour")[j].nodeValue==hour)
 						{
-							addData(myChart,0,a[i].childNodes[0].nodeValue,
-								a[i].getElementsByTagName("Hot")[j].childNodes[0].nodeValue);
-							addData(myChart,1,a[i].childNodes[0].nodeValue,
-								a[i].getElementsByTagName("Rank")[j].childNodes[0].nodeValue);
+							addData(myChart,0,a.childNodes[0].nodeValue,
+								a.getElementsByTagName("Hot")[j].childNodes[0].nodeValue);
+							addData(myChart,1,a.childNodes[0].nodeValue,
+								a.getElementsByTagName("Rank")[j].childNodes[0].nodeValue);
 							myChart.options.plugins.title.text=(date+'的'+Hour+'点的热搜排行');
 						}
 					}
