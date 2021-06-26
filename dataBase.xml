@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <news>
-	<NewsDate>5/1
+	<NewsDate id='5/1'>5/1
 	<Name>五一劳动节
 		<DateRank>1</DateRank>
 			<Hour>8
