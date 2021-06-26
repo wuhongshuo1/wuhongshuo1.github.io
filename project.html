@@ -43,11 +43,23 @@
     data: {
         labels: [],
         datasets: [{
+        	label: 'Dataset1',
             data: [],
 			fillColor: "rgba(0,60,100,1)",
 			backgroundColor:"rgba(0,60,100,1)",
             borderWidth: 1,
-        }],
+            order: 1,
+        }
+        {
+        	label: "Dataset2",
+        	data:[],
+        	fillColor: "rgba(0,60,100,1)",
+			backgroundColor:"rgba(0,60,100,1)",
+            borderWidth: 1,
+            type: line,
+            order: 0,
+        }
+        ],
     },
     options: {
         scales: {
@@ -62,9 +74,9 @@
 	var ctx = document.getElementById("myChart");
 	var myChart = new Chart(ctx,chartData,{responsive:true});
 	var index =11;
-	function addData(chart, label, data) {
+	function addData(chart, set, label, data) {
     	chart.data.labels.push(label);
-    	chart.data.datasets.forEach((dataset) => {
+    	chart.data.datasets.dataset[set] => {
         	dataset.data.push(data);
     	});
 		index++;
@@ -83,7 +95,8 @@
 		{
 			for (var i=0;i<7;i++)
 				{
-					addData(myChart,i,xmlDoc.getElementsByTagName("Hot")[i].childNodes[0].nodeValue);
+					addData(myChart,1,i,xmlDoc.getElementsByTagName("Hot")[i].childNodes[0].nodeValue);
+					addData(myChart,0,i,xmlDoc.getElementByTagName("Rank")[i].childNodes[0].nodeValue);
 				}
 		};
 	function load()
