@@ -113,7 +113,7 @@
 		{
 			for (var i=0;i<7;i++)
 				{
-					var a=xmlDoc.getElementById("5/1").getElementsByTagName("Name");
+					var a=xmlDoc.getElementById("5/1")[0].getElementsByTagName("Name");
 					for (var j=0;j<24;j++)
 					{
 						if (a[i].getElementsByTagName("Hour")[j].nodeValue==hour)
