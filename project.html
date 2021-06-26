@@ -35,8 +35,6 @@
 	<script>
 		xmlDoc=loadXMLDoc("dataBase.xml");
 		function test(){
-			var x=xmlDoc.getElementsByTagName("news")[0];
-			var y=x.childNodes[0];
 			document.getElementById("element").innerHTML=xmlDoc.getElementsByTagName("Hour")[0].childNodes[0].nodeValue;
 		};
 	var news ={newsID:0,newsName:"",newsDate:"",newsTime:"",newsHot:"",newsRank:0};
@@ -83,16 +81,15 @@
 	var arr=new Array();
 	function setup()
 		{
-			for (var i=0;i<2;i++)
+			for (var i=0;i<7;i++)
 				{
-					arr[i]=new news()
+					addData(myChart,i,xmlDoc.getElementsByTagName("Hot")[i].childNodes[0].nodeValue);
 				}
 		};
 	function load()
-		{
-		if(chartData.data.length!=0)
-			removeData(myChart);
-	};
+	{
+
+	}
 	</script>
 	<button onClick="test()">点击</button>
 </body>
