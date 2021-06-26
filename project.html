@@ -113,7 +113,7 @@
 		{
 			for (var i=0;i<7;i++)
 				{
-					var a=xmlDoc.getElementById(date).getElementsByTagName("Name")[i];
+					var a=xmlDoc.getElementById("5/1").getElementsByTagName("Name")[i];
 					for (var j=0;j<24;j++)
 					{
 						if (a.getElementsByTagName("Hour")[j].nodeValue==hour)
@@ -132,7 +132,7 @@
 
 	}
 	</script>
-	<button onClick="setup('5/1',19)">setup</button>
+	<button onClick="setup("5/1",19)">setup</button>
 	<button onClick="removeData(myChart)">删除</button>
 </body>
 </html>
