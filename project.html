@@ -128,7 +128,6 @@
 								a.getElementsByTagName("Rank")[j].childNodes[0].nodeValue);
 							myChart.options.plugins.title.text=(date+'的'+hour+'点的热搜排行');
 						}
-						document.getElementsByTagName("element").innerHTML=a.getElementsByTagName("Hot")[j].childNodes[0].nodeValue;
 					}
 				}
 		};
@@ -137,18 +136,25 @@
 
 	}
 	</script>
-	<button id=setupButton onClick="setup(0,19)">setup</button>
+	<button id=setupButton onClick="setup(0,changeSetup())">setup</button>
 	<button onClick="removeData(myChart)">删除</button>
 	<select id="HourList" onChange="changeSetup(this.value)">
 	</select>
 	<script>
-		function changeSetup(i)
+		function changeSetup()
 		{
-			document.getElementById('setupButton').onClick="setup(0,i)";
+			for (i=0;i<24;i++)
+			{
+				if (document.getElementsByTagName(('h'+i)).selected=true)
+				{
+					return i;
+				}
+			}
 		}
 		for (i=0;i<24;i++)
 		{
 			var option=document.createElement("option");
+			option.id=('h'+i);
 			option.value=i;
 			option.text=(i+'点');
 			document.getElementById('HourList').add(option,null);
