@@ -111,6 +111,10 @@
 	};
 	function setup(date,hour)
 		{
+			while (myChart.data.length)
+			{
+				removeData(myChart);
+			}
 			for (var i=0;i<7;i++)
 				{
 					var a=xmlDoc.getElementsByTagName("NewsDate")[date].getElementsByTagName("Name")[i];
@@ -135,5 +139,16 @@
 	</script>
 	<button onClick="setup(0,19)">setup</button>
 	<button onClick="removeData(myChart)">删除</button>
+	<select id="HourList" form="HourForm">
+	</select>
+	<script>
+		for (i=0;i<24;i++)
+		{
+			var option=document.createElement("option");
+			option.text=(i+'点');
+			option.onClick="setup(0,i)";
+			document.getElementById('HourList').add(option,null);
+		}
+	</script>
 </body>
 </html>
