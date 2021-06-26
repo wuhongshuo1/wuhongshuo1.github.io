@@ -76,7 +76,7 @@
 	var index =11;
 	function addData(chart, set, label, data) {
     	chart.data.labels.push(label);
-    	chart.data.datasets.dataset[set].data.push(data);
+    	chart.data.datasets[set].dataset.data.push(data);
 		index++;
     	chart.update();
 	};
