@@ -137,16 +137,20 @@
 
 	}
 	</script>
-	<button onClick="setup(0,19)">setup</button>
+	<button id=setupButton onClick="setup(0,19)">setup</button>
 	<button onClick="removeData(myChart)">删除</button>
-	<select id="HourList" form="HourForm">
+	<select id="HourList">
 	</select>
 	<script>
+		funciton changeSetup(i)
+		{
+			document.getElementById('setupButton').onClick="setup(0,i)";
+		}
 		for (i=0;i<24;i++)
 		{
 			var option=document.createElement("option");
 			option.text=(i+'点');
-			option.onchange="setup(0,i)";
+			option.onsubmit="setup(0,i)";
 			document.getElementById('HourList').add(option,null);
 		}
 	</script>
