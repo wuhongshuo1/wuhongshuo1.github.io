@@ -6,6 +6,7 @@
 </head>
 
 <body>
+	<h1 id=element> </h1>
 	<script src="chart.min.js"> //引入Chart.js
 	Chart.defaults.global.responsive = true; //默认开启图表响应
 	</script>
@@ -36,7 +37,7 @@
 		function test(){
 			var x=xmlDoc.getElementsByTagName("news")[0];
 			var y=x.childNodes[0];
-			y=this.responseText;
+			document.getElementById("element").innerHTML=y;
 			xhttp.open("GET","dataBase.xml",false);
 			xhttp.send();
 		};
