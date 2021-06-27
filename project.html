@@ -37,10 +37,6 @@
 		function test(){
 			document.getElementById("element").innerHTML=xmlDoc.getElementsByTagName("Hour")[0].childNodes[0].nodeValue;
 		};
-	const footer = (tooltipItems) => {
-		var link = tooltipItems.xLabel;
-		return link;
-		};
 	var chartData = { //定义图表数据
     type: 'bar',
     data: {
@@ -91,7 +87,10 @@
         	},
         	tooltip: {
         		callbacks: {
-        			footer: footer,
+        			footer: function (tooltipItems) {
+						var link = tooltipItems.xLabel;
+						return link;
+					};,
         		}
         	}
         }
