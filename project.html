@@ -37,7 +37,10 @@
 		function test(){
 			document.getElementById("element").innerHTML=xmlDoc.getElementsByTagName("Hour")[0].childNodes[0].nodeValue;
 		};
-	var news ={newsID:0,newsName:"",newsDate:"",newsTime:"",newsHot:"",newsRank:0};
+	const footer = (tooltipItems) => {
+		var link = tooltipItems.xLabel;
+		return link;
+		};
 	var chartData = { //定义图表数据
     type: 'bar',
     data: {
@@ -94,10 +97,6 @@
         }
     }
 	};
-	const footer = (tooltipItems) => {
-		var link = tooltipItems.xLabel;
-		return link;
-		};
 	var ctx = document.getElementById("myChart");
 	var myChart = new Chart(ctx,chartData,{responsive:true});
 	var index =11;
