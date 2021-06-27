@@ -88,8 +88,9 @@
         	tooltip: {
         		callbacks: {
         			footer: function (tooltipItem) {
+        				var link;
         				tooltipItem.forEach(function(tooltipItem) {
-        					var link = tooltipItem.label;
+        					link = tooltipItem.label;
         				});
         				this.onClick = function(){
         						window.open("https://s.weibo.com/weibo?q="+link);
