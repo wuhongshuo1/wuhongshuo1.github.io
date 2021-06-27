@@ -78,7 +78,7 @@
 
 		function setup(date)
 		{
-			for (var i=0;i<xmlDoc.getElementsByTagName('NewsDate').getElementsByTagName('Name').length;i++)
+			for (var i=0;i<xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('Name').length;i++)
 			{
 				newDataSet={
 					label: xmlDoc.getElementsByTagName('Name')[i].childNode[0].nodeValue,
