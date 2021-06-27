@@ -81,12 +81,12 @@
 			for (var i=0;i<xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('Name').length;i++)
 			{
 				newDataSet={
-					label: xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('Name')[i].innerHTML,
+					label: xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('Name')[i].nodeValue,
 					data: [],
 				}
 				for (var j=0;j<24;j++)
 				{
-					newDataSet.data.push(xmlDoc.getElementsByTagName('Hot').innerHTML);
+					newDataSet.data.push(xmlDoc.getElementsByTagName('Hot').nodeValue);
 				}
 				myChart.data.datasets.push(newDataSet);
       			myChart.update();
