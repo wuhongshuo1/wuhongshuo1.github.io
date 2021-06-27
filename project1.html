@@ -117,5 +117,29 @@
       		}
 		};
 	</script>
-	<button onClick=setup(0)>setup</button>
+	<button id=setupButton onClick="setup(document.getElementById('DateList').selectedIndex,
+		document.getElementById('HourList').selectedIndex)">setup</button>
+	<button onClick="removeData(myChart)">删除</button>
+	<select id="DateList">
+		<option id="5/1" value=0 selected=true>5/1</option>
+		<option id="5/2" value=1>5/2</option>
+		<option id="5/3" value=2>5/3</option>
+	</select>
+	<select id="HourList">
+	</select>
+	<script>
+		
+		for (i=0;i<24;i++)
+		{
+			var option=document.createElement("option");
+			if (i==0)
+			{
+				option.selected=true;
+			}
+			option.id=('h'+i);
+			option.value=i;
+			option.text=(i+'点');
+			document.getElementById('HourList').add(option,null);
+		}
+	</script>
 </body>
