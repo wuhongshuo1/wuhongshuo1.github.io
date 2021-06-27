@@ -139,6 +139,7 @@
 				window.alert('已点');
 				window.open('https://s.weibo.com/weibo?q='+myChart.data.datasets[tip.index].tooltip.footer.childNodes.nodeValue);
 		}
+	}
 		function mode()
 		{
 			var nightMode=false;
@@ -154,7 +155,6 @@
 				document.getElementById('modeSwitch').innerHTML='切换日间模式';
 				nightMode=false;
 			}
-		}
 		}
 	</script>
 	<button id=setupButton onClick="setup(document.getElementById('DateList').selectedIndex,
