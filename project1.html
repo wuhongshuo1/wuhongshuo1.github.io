@@ -92,12 +92,12 @@
 					}
 					if (j<=(xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('Name')[i].getElementsByTagName('Hour')[0].childNodes[0].nodeValue+xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('Name')[i].getElementsByTagName('Hour').length-1))
 					{
-						newDataSet.data.push(xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('Name')[i].getElementsByTagName('Hour')[count].childNodes[0].nodeValue);
+						newDataSet.data.push(xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('Name')[i].getElementsByTagName('Hot')[count].childNodes[0].nodeValue);
 						count++;
 					}
 					else
 					{
-						newDataSet.data.push(xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('Name')[i].getElementsByTagName('Hour')[0].childNodes[0].nodeValue);
+						newDataSet.data.push(xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('Name')[i].getElementsByTagName('Hour').length);
 						//newDataSet.data.push(0);
 					}
 				}
