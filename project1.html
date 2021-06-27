@@ -91,7 +91,7 @@
 						chartData.data.labels.push(j+'点');
 					}
 					var hour=xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('Name')[i].getElementsByTagName('Hour')[0];
-					if ((j>=hour.childNodes[0].nodeValue)&&(j<=(hour.childNodes[0].nodeValue+xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('Name')[i].getElementsByTagName('Hour').length-1)))
+					if (j>=hour.childNodes[0].nodeValue)
 					{
 						newDataSet.data.push(getElementsByTagName('NewsDate')[date].getElementsByTagName('Name')[i].getElementsByTagName('Hour')[count].childNodes[0].nodeValue);
 						count++;
