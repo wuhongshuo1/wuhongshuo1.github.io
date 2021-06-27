@@ -91,17 +91,6 @@
 				myChart.data.datasets.push(newDataSet);
       			myChart.update();
 			}
-			for (var i=0;i<24;i++)
-			{
-				if (!xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('hour')[i])
-				{
-					addData(myChart,i,(i+'点'),0);
-				}
-				else
-				{
-					addData(myChart,i,(i+'点'),i);
-				}
-			}
 		};
 	</script>
 	<button onClick=setup(0)>setup</button>
