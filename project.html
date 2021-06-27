@@ -43,7 +43,7 @@
     data: {
         labels: [],
         datasets: [{
-        	label: 'Dataset1',
+        	label: '热度',
             data: [],
 			fillColor: "rgba(0,60,100,1)",
 			backgroundColor:"rgba(0,60,100,1)",
@@ -52,7 +52,7 @@
             yAxisID:'y',
         },
         {
-        	label: "Dataset2",
+        	label: '排名',
         	data:[],
         	fillColor: "rgba(0,60,100,1)",
 			backgroundColor:"rgba(0,60,100,1)",
@@ -86,9 +86,15 @@
         		display: true,
         		text: '首页',
         	}
+        	tooltip: {
+        		callbacks: {
+        			footer: footer,
+        		}
+        	}
         }
     }
 	};
+	var footer = null;
 	var ctx = document.getElementById("myChart");
 	var myChart = new Chart(ctx,chartData,{responsive:true});
 	var index =11;
@@ -96,6 +102,8 @@
 		if (set==0)
 		{
 			chart.data.labels.push(label);
+			var link=('https://s.weibo.com/weibo?q='+label);
+			chart.options.plungins.tooltip.footer.innerHTML=chart.options.plungins.tooltip.footer.innerHTML.link(link);
 		}
     	chart.data.datasets[set].data.push(data_);
 		index++;
