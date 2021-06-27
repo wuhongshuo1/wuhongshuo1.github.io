@@ -87,9 +87,9 @@
         	},
         	tooltip: {
         		callbacks: {
-        			footer: function (tooltipItems) {
-        				tooltipItems.forEach(function(tooltipItem) {
-        					link = tooltipItem.xLabel;
+        			footer: function (tooltipItem) {
+        				tooltipItem.forEach(function(tooltipItem) {
+        					link = tooltipItem.label;
         				});
 						return '链接'+link;
 					},
