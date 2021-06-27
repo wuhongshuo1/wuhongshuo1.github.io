@@ -136,7 +136,7 @@
 		document.getElementById('HourList').selectedIndex)">setup</button>
 	<button onClick="removeData(myChart)">删除</button>
 	<select id="DateList">
-		<option id="5/1" value=0>5/1</option>
+		<option id="5/1" value=0 selected=true>5/1</option>
 		<option id="5/2" value=1>5/2</option>
 	</select>
 	<select id="HourList">
@@ -151,7 +151,6 @@
 			option.text=(i+'点');
 			document.getElementById('HourList').add(option,null);
 		}
-		document.getElementById('DateList').getElementById('5/1').selected=true;
 		document.getElementById('HourList').getElementById('h0').selected=true;
 	</script>
 </body>
