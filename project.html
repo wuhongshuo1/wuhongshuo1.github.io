@@ -153,10 +153,11 @@
 			else
 			{
 				document.body.style.background='rgb(245,245,245)';
-				document.getElementById('modeSwitch').innerHTML='切换日间模式';
+				document.getElementById('modeSwitch').innerHTML='切换夜间模式';
 				Chart.defaults.color='#666';
 				nightMode=false;
 			}
+			myChart.update();
 		}
 		function hyperlink()
 		{
