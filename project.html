@@ -146,12 +146,15 @@
 		for (i=0;i<24;i++)
 		{
 			var option=document.createElement("option");
+			if (i=0)
+			{
+				option.selected=true;
+			}
 			option.id=('h'+i);
 			option.value=i;
 			option.text=(i+'点');
 			document.getElementById('HourList').add(option,null);
 		}
-		document.getElementById('HourList').getElementById('h0').selected=true;
 	</script>
 </body>
 </html>
