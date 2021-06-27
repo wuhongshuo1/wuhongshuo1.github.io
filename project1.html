@@ -84,7 +84,7 @@
 			}
 			for (var i=0;i<24;i++)
 			{
-				if (xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('hour')[i].length==0)
+				if (!xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('hour')[i])
 				{
 					addData(myChart,i,(i+'点'),0);
 				}
