@@ -83,6 +83,7 @@
 					label: xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('Name')[i].childNodes[0].nodeValue,
 					data: [],
 				}
+				var count=0;
 				for (var j=0;j<24;j++)
 				{
 					if (i==0)
@@ -92,7 +93,8 @@
 					hour=xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('Name')[i].getElementsByTagName('Hour');
 					if ((j>=hour[0].childNodes[0].nodeValue)&&(j<=(hour[0].childNodes[0].nodeValue+hour.length-1)))
 					{
-						newDataSet.data.push(hour[j].childNodes[0].nodeValue);
+						newDataSet.data.push(hour[count].childNodes[0].nodeValue);
+						count++;
 					}
 					else
 					{
