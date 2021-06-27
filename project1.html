@@ -93,7 +93,7 @@
 					var hour=xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('Name')[i].getElementsByTagName('Hour')[0];
 					if (j>=hour.childNodes[0].nodeValue)
 					{
-						newDataSet.data.push(getElementsByTagName('NewsDate')[date].getElementsByTagName('Name')[i].getElementsByTagName('Hour')[count].childNodes[0].nodeValue);
+						newDataSet.data.push(xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('Name')[i].getElementsByTagName('Hour')[count].childNodes[0].nodeValue);
 						count++;
 					}
 					else
