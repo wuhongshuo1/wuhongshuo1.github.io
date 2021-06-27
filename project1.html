@@ -91,7 +91,7 @@
 					}
 						newDataSet.data.push(xmlDoc.getElementsByTagName('Hot')[j].childNodes[0].nodeValue);
 				}
-				myChart.data.datasets.push(newDataSet);
+				myChart.data.datasets[i].push(newDataSet);
       			myChart.update();
 			}
 		};
