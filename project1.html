@@ -81,7 +81,7 @@
 			for (var i=0;i<xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('Name').length;i++)
 			{
 				newDataSet={
-					label: xmlDoc.getElementsByTagName('Name')[i].childNode[0].nodeValue,
+					label: xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('Name')[i].childNode[0].nodeValue,
 					data: [],
 				}
 				for (var j=0;j<24;j++)
