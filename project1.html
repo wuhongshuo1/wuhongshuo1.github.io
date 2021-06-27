@@ -5,7 +5,7 @@
 <title>Project1</title>
 </head>
 
-<body>
+<body style="background: rgb(245,245,245);">
 <script src="chart.min.js"> //引入Chart.js
 //某天新闻热度总览
 	Chart.defaults.global.responsive = true; //默认开启图表响应
@@ -120,12 +120,36 @@
       			myChart.update();
       		}
 		};
+		var nightMode=false;
+		function mode()
+		{
+			if (!nightMode)
+			{
+				document.body.style.background='rgb(112,128,144)';
+				document.getElementById('modeSwitch').innerHTML='切换日间模式';
+				Chart.defaults.color='rgb(255,255,255)';
+				nightMode=true;
+			}
+			else
+			{
+				document.body.style.background='rgb(245,245,245)';
+				document.getElementById('modeSwitch').innerHTML='切换夜间模式';
+				Chart.defaults.color='#666';
+				nightMode=false;
+			}
+			myChart.update();
+		}
+		function hyperlink()
+		{
+			window.open("https://wuhongshuo1.site/project");
+		}
 	</script>
 	<button id=setupButton onClick="setup(document.getElementById('DateList').selectedIndex)">setup</button>
-	<button onClick="removeData(myChart)">删除</button>
 	<select id="DateList">
 		<option id="5/1" value=0 selected=true>5/1</option>
 		<option id="5/2" value=1>5/2</option>
 		<option id="5/3" value=2>5/3</option>
 	</select>
+	<button id=modeSwitch onClick="mode()">切换夜间模式</button>
+	<button id=hyperLink onClick="hyperlink()">时数据</button>
 </body>
