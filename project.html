@@ -90,10 +90,10 @@
         			footer: function (tooltipItem) {
         				tooltipItem.forEach(function(tooltipItem) {
         					var link = tooltipItem.label;
-        					this.onClick = function(){
+        				});
+        				this.onClick = function(){
         						window.open("https://s.weibo.com/weibo?q="+link)
         					};
-        				});
 						return '点击访问'+link;
 					},
         		}
