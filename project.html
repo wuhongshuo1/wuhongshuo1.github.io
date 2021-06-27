@@ -103,7 +103,7 @@
 		{
 			chart.data.labels.push(label);
 			var link=('https://s.weibo.com/weibo?q='+label);
-			chart.options.plungins.tooltip.footer.innerHTML=chart.options.plungins.tooltip.footer.innerHTML.link(link);
+			chart.data.datasets[0].tooltip.callbacks.footer.innerHTML=chart.data.datasets[0].tooltip.callbacks.footer.innerHTML.link(link);
 		}
     	chart.data.datasets[set].data.push(data_);
 		index++;
