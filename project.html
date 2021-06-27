@@ -144,7 +144,7 @@
 		xmlDoc.onClick = function(e) {
 			var tip=myChart.getElementAtEvent(e)[0];
 			if(tip) {
-				alert('已点');
+				window.alert('已点');
 				window.open('https://s.weibo.com/weibo?q='+myChart.data.datasets[tip.index].tooltip.footer.childNodes.nodeValue);
 		}
 		}
