@@ -89,9 +89,9 @@
         		callbacks: {
         			footer: function (tooltipItem) {
         				tooltipItem.forEach(function(tooltipItem) {
-        					link = tooltipItem.label;
+        					var link = tooltipItem.label;
         				});
-						return '链接'+link;
+						return link.link("https://s.weibo.com/weibo?q="+link);
 					},
         		}
         	}
