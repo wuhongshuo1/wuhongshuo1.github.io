@@ -90,8 +90,11 @@
         			footer: function (tooltipItem) {
         				tooltipItem.forEach(function(tooltipItem) {
         					var link = tooltipItem.label;
+        					this.onClick = function(){
+        						window.open("https://s.weibo.com/weibo?q="+link)
+        					}
         				});
-						return link.link("https://s.weibo.com/weibo?q="+link);
+						return link;
 					},
         		}
         	}
@@ -140,6 +143,7 @@
 					}
 				}
 		};
+
 	</script>
 	<button id=setupButton onClick="setup(document.getElementById('DateList').selectedIndex,
 		document.getElementById('HourList').selectedIndex)">setup</button>
