@@ -94,14 +94,12 @@
 					var b=Number(xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('Name')[i].getElementsByTagName('Hour').length);
 					if (j<=a+b-1)
 					{
-						newDataSeet.data.push(0);
-						//newDataSet.data.push(xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('Name')[i].getElementsByTagName('Hot')[count].childNodes[0].nodeValue);
+						newDataSet.data.push(xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('Name')[i].getElementsByTagName('Hot')[count].childNodes[0].nodeValue);
 						count++;
 					}
 					else
 					{
-						newDataSet.data.push(a+b);
-						//newDataSet.data.push(0);
+						newDataSet.data.push(0);
 					}
 				}
 				myChart.data.datasets.push(newDataSet);
