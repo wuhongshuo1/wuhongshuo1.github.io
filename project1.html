@@ -92,6 +92,8 @@
 					}
 					var a=xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('Name')[i].getElementsByTagName('Hour')[0].childNodes[0].nodeValue;
 					var b=xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('Name')[i].getElementsByTagName('Hour').length;
+					window.alert(a);
+					window.alert(b);
 					if (j<=a+b-1)
 					{
 						newDataSeet.data.push(0);
