@@ -92,9 +92,9 @@
 					}
 					var a=Number(xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('Name')[i].getElementsByTagName('Hour')[0].childNodes[0].nodeValue);
 					var b=Number(xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('Name')[i].getElementsByTagName('Hour').length);
-					if (j<=a+b-1)
+					if ((j>=a)&&(j<=a+b-1))
 					{
-						newDataSet.data.push(xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('Name')[i].getElementsByTagName('Hour')[0].getElementsByTagName('Hot')[0].childNodes[0].nodeValue);
+						newDataSet.data.push(xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('Name')[i].getElementsByTagName('Hour')[count].getElementsByTagName('Hot')[0].childNodes[0].nodeValue);
 						count++;
 					}
 					else
