@@ -90,11 +90,10 @@
 					{
 						chartData.data.labels.push(j+'点');
 					}
-					var hour=new Array();
-					hour=xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('Name')[i].getElementsByTagName('Hour');
-					if ((j>=hour[0].childNodes[0].nodeValue)&&(j<=(hour[0].childNodes[0].nodeValue+hour.length-1)))
+					var hour=xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('Name')[i].getElementsByTagName('Hour')[0];
+					if ((j>=hour.childNodes[0].nodeValue)&&(j<=(hour.childNodes[0].nodeValue+hour.length-1)))
 					{
-						newDataSet.data.push(hour[count].childNodes[0].nodeValue);
+						newDataSet.data.push(getElementsByTagName('NewsDate')[date].getElementsByTagName('Name')[i].getElementsByTagName('Hour')[count].childNodes[0].nodeValue);
 						count++;
 					}
 					else
