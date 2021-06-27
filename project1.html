@@ -6,5 +6,87 @@
 </head>
 
 <body>
+<script src="chart.min.js"> //引入Chart.js
+//某天新闻热度总览
+	Chart.defaults.global.responsive = true; //默认开启图表响应
+	</script>
+	<script src="jquery-3.6.0.min.js"> //引入jquery.js
+	</script>
+	
+		
+	<script>
+	function loadXMLDoc(dname)
+{
+    if (window.XMLHttpRequest)
+    {
+        xhttp=new XMLHttpRequest();
+    }
+    else
+    {
+        xhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xhttp.open("GET",dname,false);
+    xhttp.send();
+    return xhttp.responseXML;
+}
+	</script>
+	<canvas id="myChart" width="400" height="400"></canvas> <!--声明图表大小-->
+	
+	<script>
+		xmlDoc=loadXMLDoc("dataBase.xml");
+		var chartData = {
+			type: 'line',
+			data: {
+				labels: [],
+				datasets: [],
+			},
+			options: {
+				plugins: {
+					title: {
+						display=true,
+						text='首页',
+					}
+				}
+			}
+		}
+		var ctx = document.getElementById("myChart");
+		var myChart = new Chart(ctx,chartData,{responsive:true});
+		function addData(chart, set, label, data_) {
+			if (set==0)
+			{
+				chart.data.labels.push(label);
+			}
+    		chart.data.datasets[set].data.push(data_);
+			index++;
+    		chart.update();
+		};
 
+		function removeData(chart) {
+			chart.data.labels.pop();
+    		chart.data.datasets.forEach((dataset) => {
+        		dataset.data.pop();
+        	});
+    		chart.update();
+		};
+
+		function setup(date)
+		{
+			while (myChart.data.datasets[0].data.length)
+			{
+				removeData(myChart);
+			}
+			for (var i=0;i<24;i++)
+			{
+				if (xmlDoc.getElementsByTagname('NewsDate')[date].getElementsByTagname('hour')[i].length==0)
+				{
+					addData(myChart,i,(i+'点'),0);
+				}
+				else
+				{
+					addData(myChart,i,(i+'点'),i);
+				}
+			}
+		};
+	</script>
+	<button onClick=setup(0)>setup</button>
 </body>
