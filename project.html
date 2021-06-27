@@ -94,7 +94,10 @@
         }
     }
 	};
-	var footer = "超链接错误！";
+	const footer = (tooltipItems) => {
+		var link = tooltipItems.xLabel;
+		return link;
+		};
 	var ctx = document.getElementById("myChart");
 	var myChart = new Chart(ctx,chartData,{responsive:true});
 	var index =11;
@@ -102,10 +105,6 @@
 		if (set==0)
 		{
 			chart.data.labels.push(label);
-			var link=('https://s.weibo.com/weibo?q='+label);
-			footer=(tooltipItems)=>{
-				return str.link(link);
-			}
 		}
     	chart.data.datasets[set].data.push(data_);
 		index++;
