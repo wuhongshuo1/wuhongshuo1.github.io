@@ -92,8 +92,6 @@
         				tooltipItem.forEach(function(tooltipItem) {
         					link = tooltipItem.label;
         				});
-        				this.onClick = function(){
-        						window.open("https://s.weibo.com/weibo?q="+link);
         					};
 						return '点击访问'+link;
 					},
@@ -144,7 +142,12 @@
 					}
 				}
 		};
+		myChart.onClick = function(e) {
+			var tip=myChart.getElementAtEvent(e);
+			if(!tip.length) return;
+			window.open('https://s.weibo.com/weibo?q='+myChart.data.datasets[tip.index].tooltip.footer.childNodes.nodeValue);
 
+		}
 	</script>
 	<button id=setupButton onClick="setup(document.getElementById('DateList').selectedIndex,
 		document.getElementById('HourList').selectedIndex)">setup</button>
