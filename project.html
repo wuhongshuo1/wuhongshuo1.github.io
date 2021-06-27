@@ -88,8 +88,10 @@
         	tooltip: {
         		callbacks: {
         			footer: function (tooltipItems) {
-						var link = tooltipItems.xLabel;
-						return link;
+        				tooltipItems.forEach(function(tooltipItem) {
+        					link = tooltipItem.xLabel;
+        				});
+						return '链接'+link;
 					},
         		}
         	}
@@ -103,7 +105,6 @@
 		if (set==0)
 		{
 			chart.data.labels.push(label);
-			chart.data.datasets[0].tooltip.callbacks.footer();
 		}
     	chart.data.datasets[set].data.push(data_);
 		index++;
