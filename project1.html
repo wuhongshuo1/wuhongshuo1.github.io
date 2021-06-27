@@ -85,8 +85,11 @@
 				}
 				for (var j=0;j<24;j++)
 				{
+					if (i==0)
+					{
+						chartData.data.labels.push(j+'点');
+					}
 						newDataSet.data.push(xmlDoc.getElementsByTagName('Hot')[j].childNodes[0].nodeValue);
-						chartData.data.labels.push(i+'点');
 				}
 				myChart.data.datasets.push(newDataSet);
       			myChart.update();
