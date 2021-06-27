@@ -48,6 +48,7 @@
 				}],
 			},
 			options: {
+				indexAxis: 'y',
 				plugins: {
 					title: {
 						display: true,
@@ -77,9 +78,18 @@
 
 		function setup(date)
 		{
-			while (myChart.data.datasets[0].length)
+			for (var i=0;i<xmlDoc.getElementsByTagName('NewsDate').getElementsByTagName('Name').length;i++)
 			{
-				removeData(myChart);
+				newDataSet={
+					label: xmlDoc.getElementsByTagName('Name')[i].childNode[0].nodeValue,
+					data: [],
+				}
+				for (var j=0;j<24;j++)
+				{
+					newDataSet.data[j].childNode[0].nodeValue=xmlDoc.getElementsByTagName('Hot').childNode[0].nodeValue;
+				}
+				chart.data.datasets.push(newDataSet);
+      			chart.update();
 			}
 			for (var i=0;i<24;i++)
 			{
