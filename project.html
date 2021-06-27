@@ -140,21 +140,27 @@
 				window.open('https://s.weibo.com/weibo?q='+myChart.data.datasets[tip.index].tooltip.footer.childNodes.nodeValue);
 		}
 	}
+		var nightMode=false;
 		function mode()
 		{
-			var nightMode=false;
 			if (!nightMode)
 			{
 				document.body.style.background='rgb(112,128,144)';
 				document.getElementById('modeSwitch').innerHTML='切换日间模式';
+				Chart.defaults.color='rgb(255,255,255)';
 				nightMode=true;
 			}
 			else
 			{
 				document.body.style.background='rgb(245,245,245)';
 				document.getElementById('modeSwitch').innerHTML='切换日间模式';
+				Chart.defaults.color='#666';
 				nightMode=false;
 			}
+		}
+		function hyperlink()
+		{
+			window.open("https://wuhongshuo1.site/project1");
 		}
 	</script>
 	<button id=setupButton onClick="setup(document.getElementById('DateList').selectedIndex,
@@ -167,6 +173,7 @@
 	<select id="HourList">
 	</select>
 	<button id=modeSwitch onClick="mode()">切换夜间模式</button>
+	<button id=hyperLink onClick="hyperlink()">日数据</button>
 	<script>
 		
 		for (i=0;i<24;i++)
