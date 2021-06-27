@@ -103,7 +103,9 @@
 		{
 			chart.data.labels.push(label);
 			var link=('https://s.weibo.com/weibo?q='+label);
-			chart.data.datasets[0].tooltip.callbacks.footer.innerHTML=chart.data.datasets[0].tooltip.callbacks.footer.innerHTML.link(link);
+			footer=(tooltipItems)=>{
+				return str.link(link);
+			}
 		}
     	chart.data.datasets[set].data.push(data_);
 		index++;
