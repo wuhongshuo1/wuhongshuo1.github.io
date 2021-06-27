@@ -90,7 +90,7 @@
 						chartData.data.labels.push(j+'点');
 					}
 					hour=xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('Name')[i].getElementsByTagName('Hour');
-					if ((j>=hour.firstChild.nodeValue)&&(j<=hour.lastChild.nodeValue))
+					if ((j>=hour[0].childNodes[0].nodeValue)&&(j<=(hour[0].childNodes[0].nodeValue+hour.length-1))
 					{
 						newDataSet.data.push(hour[j].childNodes[0].nodeValue);
 					}
