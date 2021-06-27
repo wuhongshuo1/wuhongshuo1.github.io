@@ -56,6 +56,10 @@
 				}
 			}
 		}
+		for (var i=0;i<24;i++)
+		{
+			chartData.data.labels[i].push(i+'点');
+		}
 		var ctx = document.getElementById("myChart");
 		var myChart = new Chart(ctx,chartData,{responsive:true});
 		function addData(chart, set, label, data_) {
