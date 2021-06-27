@@ -89,9 +89,17 @@
 					{
 						chartData.data.labels.push(j+'点');
 					}
-						newDataSet.data.push(xmlDoc.getElementsByTagName('Hot')[j].childNodes[0].nodeValue);
+					if (xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('Name')[i].getElementsByTagName('Hour').hasAttribute(j))
+					{
+						newDataSet.data.push(xmlDoc.getElementsByTagName('NewsDate')[date].getElementsByTagName('Name')[i].getElementsByTagName('Hour')[j].getElementsByTagName('Hot')[j].childNodes[0].nodeValue);
+					}
+					else
+					{
+						newDataSet.data.push(0);
+					}
+					}
 				}
-				myChart.data.datasets[i].push(newDataSet);
+				myChart.data.datasets.push(newDataSet);
       			myChart.update();
 			}
 		};
